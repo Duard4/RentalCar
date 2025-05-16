@@ -19,11 +19,6 @@
   --spacing-l: 1.33333;
 }
 
-.rounded-14 {
-  border-radius: 14px;
-}
-
-
 #root {
   width: 100%;
   margin: 0 auto;
@@ -40,12 +35,16 @@
     position: absolute;
     inset: 0;
     background-image: url('/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: calc(100vh - 68px);
     z-index: -1;
-
   }
   &::after {
     content: '';
     position: absolute;
+    height: calc(100vh - 68px);
     inset: 0;
     background-color: rgba(0, 0, 0, 0.2);
     z-index: -1;
