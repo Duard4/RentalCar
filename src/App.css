@@ -1,0 +1,90 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@theme {
+  --font-poppins: Poppins, sans-serif;
+  --color-primary: #3470ff;
+  --color-primary-hover: #0b44cd;
+  --color-main: #101828;
+  --color-gray: #8d929a;
+  --color-gray-light: #dadde1;
+  --color-badges: #f2f4f7;
+  --color-inputs: #f7f7f7;
+  --color-white: #fff;
+  --font-main: 'Manrope', sans-serif;
+  --spacing-s: 1.2;
+  --spacing-m: 1.25;
+  --spacing-l: 1.33333;
+}
+
+.rounded-14 {
+  border-radius: 14px;
+}
+
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  @apply text-main font-main;
+}
+
+
+.bg-image {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('/hero.jpg');
+    z-index: -1;
+
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: -1;
+  }
+}
+
+.gradient-overlay {
+  position: absolute;
+  inset: 0;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(18, 20, 23, 0.5) 0%, rgba(18, 20, 23, 0) 100%);
+  z-index: 1;
+}
+
+.active {
+  @apply text-primary-hover;
+}
+
+.form-grid {
+  border: 1px solid var(--color-gray-light);
+  & label {
+    display: inline-block;
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  & input, & textarea {
+    @apply  w-full bg-inputs px-5 rounded-xl font-medium;
+  }
+  & input {
+    @apply py-3.5 ;
+  }
+  & textarea {
+    @apply  pt-3 h-22 box-border;
+  }
+}
